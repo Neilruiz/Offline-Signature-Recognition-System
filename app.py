@@ -1,9 +1,50 @@
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session, flash
 from User1_5.signature_user1_5 import signature_verification
 from User6_10.signature_user6_10 import signature_verification2
+# from flask_mysqldb import MySQL,MySQLdb #pip install flask-mysqldb https://github.com/alexferl/flask-mysqldb
+# from werkzeug.utils import secure_filename
+# import os
+#import magic
+# import urllib.request
+# from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = 'my_secret_key'
+
+####### ALL THE COMMENTS ARE FOR THE DATABASE. THIS CODE IS STILL IN PROGRESS AND NEED SOME EDITS AND EVALUATION.
+# app.config['MYSQL_HOST'] = 'localhost'
+# app.config['MYSQL_USER'] = 'root'
+# app.config['MYSQL_PASSWORD'] = ''
+# app.config['MYSQL_DB'] = 'testingdb'
+# app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+# mysql = MySQL(app)
+ 
+# UPLOAD_FOLDER = 'User1_5/Signature_classify/train/'
+# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+  
+# ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+  
+# def allowed_file(filename):
+#  return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+# @app.route("/upload",methods=["POST","GET"])
+# def upload():
+#     cursor = mysql.connection.cursor()
+#     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+#     now = datetime.now()
+#     if request.method == 'POST':
+#         files = request.files.getlist('files[]')
+#         #print(files)
+#         for file in files:
+#             if file and allowed_file(file.filename):
+#                 filename = secure_filename(file.filename)
+#                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+#                 cur.execute("INSERT INTO images (file_name, uploaded_on) VALUES (%s, %s)",[filename, now])
+#                 mysql.connection.commit()
+#             print(file)
+#         cur.close()   
+#         flash('File(s) successfully uploaded')    
+#     return redirect('/')
 
 users = [
     {'username': 'user1', 'password': 'password1'},
@@ -13,11 +54,11 @@ users = [
 last_verification_result = None
 last_verification_result2 = None
 
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/home', methods=["POST"])
 def home():
     return render_template('index.html')
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=["POST", "GET"])
 def login():
     if request.method == 'POST':
         username = request.form['username']
@@ -30,7 +71,7 @@ def login():
     else:
         return render_template('login.html')
 
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/signup', methods=["POST"])
 def signup():
     if request.method == 'POST':
         username = request.form['username']

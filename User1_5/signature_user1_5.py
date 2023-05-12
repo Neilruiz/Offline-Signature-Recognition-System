@@ -27,7 +27,7 @@ beta_2 = 0.999
 epsilon = 1e-07
 
 custom_optimizer = Adam(learning_rate=learning_rate, beta_1=beta_1, beta_2=beta_2, epsilon=epsilon)
-model_path = r"../Offline Signature Recognition/User1_5/identify_sign.h5"
+model_path = r"../Offline-Signature-Recognition-System/User1_5/identify_sign.h5"
 loaded_model = keras.models.load_model(model_path, compile=False)
 
 loaded_model.compile(optimizer=custom_optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
@@ -68,7 +68,7 @@ def signature_verification(train_user, test_image_path):
   #original_signature = cv2.imread("/content/drive/My Drive/Signature_classify/train/User"+ str(input_user)+"/00"+str(input_user)+"0100"+str(input_user)+".png")
   original_signatures = []
   for i in range(5):
-    original_signatures.append(r"../Offline Signature Recognition/User1_5/Signature_classify/train/"+ str(train_user) +"/00"+str(input_user)+"0"+str(i)+"00"+str(input_user)+".png")
+    original_signatures.append(r"../Offline-Signature-Recognition-System/User1_5/Signature_classify/train/"+ str(train_user) +"/00"+str(input_user)+"0"+str(i)+"00"+str(input_user)+".png")
 
   print(original_signatures)
   
@@ -161,7 +161,7 @@ def signature_verification(train_user, test_image_path):
     'similarity': max_identical,
     'signature_belongs_to': train_user if max_identical > 0.2 else 'Unknown User',
     'signature_status': 'Genuine Signature' if max_identical > 0.2 else 'Forged Signature',
-    'result_signature_path': os.path.basename(os.path.relpath(original_signatures[np.argmax([SIFT(cv2.imread(sig), input_image)[0] for sig in original_signatures])], start="../Offline Signature Recognition/User1_5/Signature_classify/train/User1").replace('\\', '/')),
+    'result_signature_path': os.path.basename(os.path.relpath(original_signatures[np.argmax([SIFT(cv2.imread(sig), input_image)[0] for sig in original_signatures])], start="../Offline-Signature-Recognition-System/User1_5/Signature_classify/train/User1").replace('\\', '/')),
     'test_signature_path': os.path.basename(destination_path.replace('\\', '/')),
     'train_keypoints': all_train_keypoints,
     'test_keypoints': all_test_keypoints,

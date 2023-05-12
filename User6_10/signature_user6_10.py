@@ -25,7 +25,7 @@ beta_2 = 0.999
 epsilon = 1e-07
 
 custom_optimizer = Adam(learning_rate=learning_rate, beta_1=beta_1, beta_2=beta_2, epsilon=epsilon)
-model_path = r"../Offline Signature Recognition/User6_10/identify_signb.h5"
+model_path = r"../Offline-Signature-Recognition-System/User6_10/identify_signb.h5"
 loaded_model = keras.models.load_model(model_path, compile=False)
 
 loaded_model.compile(optimizer=custom_optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
@@ -67,7 +67,7 @@ def signature_verification2(train_user, test_image_path):
   #original_signature = cv2.imread("/content/drive/My Drive/Signature_classify/train/User"+ str(input_user)+"/00"+str(input_user)+"0100"+str(input_user)+".png")
   original_signatures = []
   for i in range(5):
-    original_signatures.append(r"../Offline Signature Recognition/User6_10/Signature_classify/train/"+ str(user_name)+"/00"+str(input_user)+"0"+str(i)+"00"+str(input_user)+".png")
+    original_signatures.append(r"../Offline-Signature-Recognition-System/User6_10/Signature_classify/train/"+ str(user_name)+"/00"+str(input_user)+"0"+str(i)+"00"+str(input_user)+".png")
     
 
   print(original_signatures)
@@ -156,14 +156,14 @@ def signature_verification2(train_user, test_image_path):
   destination_path = os.path.join('static', 'test', test_image_basename)
   shutil.copy(test_image_path, destination_path)
 
-  print("result",os.path.relpath(original_signatures[np.argmax([SIFT(cv2.imread(sig), input_image)[0] for sig in original_signatures])], start="../Offline Signature Recognition/User6_10/Signature_classify/train/User1").replace('\\', '/'))
+  print("result",os.path.relpath(original_signatures[np.argmax([SIFT(cv2.imread(sig), input_image)[0] for sig in original_signatures])], start="../Offline-Signature-Recognition-System/User6_10/Signature_classify/train/User1").replace('\\', '/'))
   print("test",os.path.basename(destination_path.replace('\\', '/')))
 
   result_dict = {
     'similarity': max_identical,
     'signature_belongs_to': train_user if max_identical > 0.2 else 'Unknown User',
     'signature_status': 'Genuine Signature' if max_identical > 0.2 else 'Forged Signature',
-    'result_signature_path': os.path.basename(os.path.relpath(original_signatures[np.argmax([SIFT(cv2.imread(sig), input_image)[0] for sig in original_signatures])], start="C:/Users/SARAH/Documents/DANIEL/4TH YEAR - 1ST SEM/THESIS WRITING/Offline Signature Recognition/User6_10/Signature_classify/train/User1").replace('\\', '/')),
+    'result_signature_path': os.path.basename(os.path.relpath(original_signatures[np.argmax([SIFT(cv2.imread(sig), input_image)[0] for sig in original_signatures])], start="../Offline-Signature-Recognition-System/User6_10/Signature_classify/train/User1").replace('\\', '/')),
     'test_signature_path': os.path.basename(destination_path.replace('\\', '/')),
     'train_keypoints': all_train_keypoints,
     'test_keypoints': all_test_keypoints,
