@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Signature Recognition</title>
+    
+    <link rel="shortcut icon" type="image/jpg" href="Image/logo.png">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&family=Roboto:ital,wght@1,100&family=Teko&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+</head>
+<body>
+    <section class="home d-flex flex-column justify-content-center p-5">
+        <div class="arrow position-absolute top-0 end-0 m-5 ">
+            <a href="#aboutpage" class="fa fa-question text-decoration-none"></a>
+        </div>
+
+        <div class="mx-5">
+            <h1>OFFLINE <br> SIGNATURE <br> RECOGNITION <br> SYSTEM</h1><br>
+            <h3 class="pb-3 pr-2">A software application based on the usage of SIFT and Convulutional Neural Network to verify whether a given signature is genuine or forged.
+            </h3><br>
+            
+            
+            <a class="start_but d-flex justify-content-center align-items-center text-uppercase text-decoration-none mb-3" data-bs-toggle="modal" data-bs-target="#resultModal">
+                Start
+            </a>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="resultModalLabel">Choose the users you want to verify?</h5>
+
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                            <a class="train_but d-flex justify-content-center align-items-center text-uppercase text-decoration-none m-2" href="/reference"> User 1 - User 5 </a>
+
+                            <a class="train_but d-flex justify-content-center align-items-center text-uppercase text-decoration-none m-2" href="/reference2"> User 6 - User 10 </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <a class="train_but d-flex justify-content-center align-items-center text-uppercase text-decoration-none" data-bs-toggle="modal" data-bs-target="#registerModal">
+                Register  Signature
+            </a>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registerModalLabel">Register the signatures</h5>
+
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body d-flex flex-column justify-content-center align-items-center p-4 line">
+                            <span>&nbsp; &nbsp; In order to proceed with the verification process of the 'Offline Signature Recognition System' software, the user must submit or register precisely five(5) signatures Please rest assured that all images registered on the system will be handled with the utmost care and confidentiality. Click the button below to download or upload the provided specimen.</span>
+
+                            <div class="row d-flex align-items-center mt-3">
+                                <div class="registerBody col-md-6 ms-auto d-flex flex-column justify-items-center align-items-center p-3">
+                                    <div class="regText d-flex flex-column">  
+                                        <h1 id="regTitle">Download Specimen</h1>
+                                        <span>&nbsp; &nbsp; The Specimen includes containers that will hold the signatures inputted by the users. Additionally, users are required to complete the questions provided in the Specimen. To download the provided Specimen, please click on the 'Download' button.</span>
+                                    </div>
+
+                                    <a class="regButtons d-flex justify-content-center align-items-center text-uppercase text-decoration-none my-4"    href="https://docs.google.com/document/d/1A5ZF2kecr8lg3E516Rjs2Sp55JWQFCBh/edit?usp=share_link&ouid=113330749770555332221&rtpof=true&sd=true">
+                                        Download
+                                    </a>
+                                </div>
+
+                                <div class="registerBody col-md-6 ms-auto d-flex flex-column justify-items-center align-items-center p-3">
+                                    <div class="regText d-flex flex-column"> 
+                                        <h1 id="regTitle">Upload Specimen</h1>
+                                        <span>&nbsp; &nbsp; Users must ensure that all provided questions and boxes are filled with the required information and number of signatures. This is necessary for the training of the machine learning model on subsequent signatures. To upload the provided specimen, please click on the 'Upload' button.</span>
+                                    </div>
+
+                                    <a class="regButtons d-flex justify-content-center align-items-center text-uppercase text-decoration-none my-4"    href="https://drive.google.com/drive/folders/1bzQMPcd7ZI-WVKGGzdyZL2oUIeLVU6aQ?usp=sharing">
+                                        Upload
+                                    </a>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        </div>
+    </section>
+
+    <section class="about d-flex flex-column justify-content-center align-items-center p-5" id="aboutpage">
+        <div class="p-2">
+            <h1> OFFLINE SIGNATURE RECOGNITION SYSTEM </h1>
+            <h3>To fully utilize the software, it is necessary to follow these instructions. The steps must be completed sequentially to achieve the intended outcome.
+            </h3>
+        </div>
+            <div class="instructionOrder">
+                <span>1</span>
+                <p>The first step depends on whether your signature has already been registered in the system or not. If your signature is already registered, click the 'Start' button and choose the batch of users you belong to. If your signature is not registered yet, click the 'Register Signature' button and follow the provided instructions.</p>
+            </div>
+
+            <div class="instructionOrder">
+                <span>2</span>
+                <p>Once you have selected the batch of users to which your signature belongs, you will proceed to the Reference Page. On the Reference Page, you need to choose your user number, enter the directory or file path of the image you wish to verify, and upload the image for preview. After completing these tasks, click the 'Verify Signature' button to proceed to the final verification stage.</p>
+            </div>
+
+            <div class="instructionOrder">
+                <span>3</span>
+                <p>After clicking the 'Verify Signature' button, you will be directed to the Result Page, where you can view the verification outcome. The Result Page displays the Accuracy of the Result and the Verification Status of your signature, indicating whether it is Forged or Genuine. By clicking the 'Report Result' button, you can see the verification results of SIFT and the images with their matching keypoints.</p>
+            </div>
+    </section>
+
+    <section class="members d-flex flex-column justify-content-center align-items-center p-5" id="memberspage">
+        <h1>MEMBERS OF THE GROUP</h1>
+        <h3>The researchers of this thesis have demonstrated exceptional skill and dedication in their work. Their findings provide valuable insights that will contribute significantly to the advancement of the field.</h3>
+
+        <div class="membersId d-flex row justify-content-center align-items-center">
+            <div class="membersCard col-3">
+                <img src="{{ url_for('static', filename='aira.png') }}" alt="Placeholder">
+                <span>Airamin Bautista</span>
+                <h4 class="resFont">Researcher</h4>
+                <p>airamin.bautista@tup.edu.ph</p>
+            </div>
+        
+            <div class="membersCard col-3">
+                <img src="{{ url_for('static', filename='daniel.jpg') }}" alt="Placeholder">
+                <span>Daniel Borromeo</span>
+                <h4 class="resFont">Researcher</h4>
+                <p>danielchristian.borromeo@tup.edu.ph</p>
+            </div>
+        
+            <div class="membersCard col-3">
+                <img src="{{ url_for('static', filename='roseanne.jpg') }}" alt="Placeholder">
+                <span>Rose Anne Eugenio</span>
+                <h4 class="resFont">Researcher</h4>
+                <p>roseanne.eugenenio@tup.edu.ph</p>
+            </div>
+        
+            <div class="membersCard col-3">
+                <img src="{{ url_for('static', filename='chiqui.png') }}" alt="Placeholder">
+                <span>Ma. Chiqui Zabala</span>
+                <h4 class="resFont">Researcher</h4>
+                <p>mariaauchiquichi.zabala@tup.edu.ph</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="credits d-flex flex-column justify-content-center align-items-center p-5">
+        <p>In Partial FUlfillment of the Requirement for the Degree</p>
+        <p>Bachelor of Science in Computer Science</p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
+</html>

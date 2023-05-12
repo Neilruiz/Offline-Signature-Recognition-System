@@ -1,0 +1,660 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+/*****Log In Page******/
+.loginPage{
+    background: #CFB997;
+    height: 100vh;
+}
+.centerform{
+    height: 80vh;
+}
+.login{
+    width: 415px;
+    height: min-content;
+    border-radius: 12px;
+    box-shadow: 1px 3px 10px #3F3E39;
+}
+.login h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+.login form{
+    font-size: 1rem;
+}
+.login form input[type="submit"]{
+    font-size: 1rem;
+    margin-top: 15px;
+}
+.login form .btn{
+    font-weight: 700;
+    background-color: #567189;
+    letter-spacing: 0.2rem;
+}
+.login form .btn:hover{
+    color: #3B444D;
+    background-color: #FFEEC9;
+}
+.login a:hover{
+    color: #567189;
+    text-decoration: underline;
+}
+/*******Home Page******/
+.home .arrow .fa{
+    letter-spacing: 1rem;
+    padding: 0.92rem;
+    font-size: 1.3rem;
+    height: 3.3rem;    width: 3.3rem;
+    border-radius: 50%;
+    border-style: solid;
+    background: #567189;
+    color: #FFEEC9;
+    border-color: #567189;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.home .fa-question:hover {
+    background: #FFEEC9;
+    color: #567189;
+    transform: scale(1.1);
+}
+.home{
+    background: #FFEEC9;
+    height: 100vh;
+}
+.home h1{
+    font-size: 4rem;
+    font-weight: 800;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.5rem;
+    color: #567189;
+    animation: title 0.7s linear 1;
+}
+@keyframes title{
+	0%{
+		transform: translateY(-20px);
+		opacity: 0;
+	}
+	100%{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@media only screen and (max-width:800px){
+    .home h1{
+        font-size: 3rem;
+    }
+}
+.home h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #3B444D;
+    animation: title 1.8s linear 1;
+}
+.start_but{
+    height: 40px;
+    width: 300px;
+    background: rgba(0, 0,0, 0);
+    border-width: 25px;
+    box-shadow: 1px 3px 5px #567189;
+    border-radius: 15px;
+    color: #3B444D;
+    font-weight: 700;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 0.2rem;
+}
+.start_but:hover{
+    background: #567189;
+    box-shadow: 5px #567189;
+    color: #FFEEC9;
+}
+.train_but{
+    height: 40px;
+    width: 300px;
+    background: #567189;
+    border-width: 25px;
+    box-shadow: 1px 3px 5px #567189;
+    border-radius: 15px;
+    color: #FFEEC9;
+    font-weight: 700;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 0.2rem;
+}
+.train_but:hover{
+    background: #CFB997;
+    box-shadow: 1px 3px 5px #567189;
+    color: #3B444D;
+}
+.modal{
+    background: #CFB997;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.modal-body ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.modal-body li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.modal-body img {
+    width: 90vw;
+    height: 450px;
+    align-self: center;
+    justify-self: center;
+}
+
+.modal-body .img-modal {
+    display: grid;
+    gap: 10px;
+}
+
+.registerBody{
+    min-height: 330px;
+    border: 2px solid #3B444D;
+    width: 250px;
+}
+.regText{
+    min-height: 200px;
+}
+.regText h1{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 2px;
+}
+.regText span{
+    text-align: justify;
+}
+.regButtons{
+    height: 40px;
+    width: 150px;
+    background: #567189;
+    border-width: 25px;
+    box-shadow: 1px 3px 5px #CFB997;
+    border-radius: 15px;
+    color: #FFEEC9;
+    font-weight: 700;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 0.2rem;
+}
+.regButtons:hover{
+    background: #CFB997;
+    box-shadow: 1px 3px 5px #567189;
+    color: #3B444D;
+}
+/********ABOUT*******/
+.about{
+    background: #567189;
+    height: auto;
+}
+.about h1{
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    color: #FFEEC9;
+}
+.about h3{
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #CFB997;
+    padding: 1rem 5rem 1rem;
+}
+.instructionOrder{
+    padding: 1rem 2rem;
+    margin: 1rem;
+    width: 75vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background: rgba(0, 0,0, 0);
+    box-shadow: 0 0 7px #FFEEC9;
+    border-radius: 15px;
+    line-height: 1.5rem;
+}
+.instructionOrder span{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+    color: #FFAC3C;
+}
+.instructionOrder p{
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #FFEEC9;
+    margin-left: 1rem;
+}
+/*****MEMBERS*******/
+.members{
+    background: #CFB997;
+    height: auto;
+}
+.members h1{
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    color: #567189;
+}
+.members h3{
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #3B444D;
+    padding: 1rem 5rem 1rem;
+}
+.membersId .membersCard{
+    padding: 2rem;
+    margin: 1.2rem 1.5rem;
+    width: 320px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: rgba(0, 0,0, 0);
+    box-shadow: 0 0 7px #567189;
+    border-radius: 15px;
+    line-height: 1.5rem;
+}
+.membersCard img{
+    width: 200px;
+    height: 200px;
+    align-self: center;
+}
+.membersId .membersCard span{
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Alfa Slab One', cursive;
+    color: #567189;
+}
+.membersId .membersCard p{
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #3B444D;
+}
+.resFont{
+    font-size: 1.3rem;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: 'Teko', sans-serif;
+}
+/******CREDITS*******/
+.credits{
+    background: #3B444D;
+    height: auto;
+}
+.credits p{
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Teko', sans-serif;
+    color: #fff;
+    letter-spacing: 0.1rem;
+}
+/*********************************/
+/******INPUT PAGE*****/
+.inputPage{
+    background: #567189;
+    min-height: 100vh;
+}
+.inputPage h1 a{
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.5rem;
+    color: #FFEEC9;
+}
+.arrow .fa{
+    letter-spacing: 1rem;
+    padding: 0.92rem;
+    font-size: 1.3rem;
+    height: 3.3rem;
+    width: 3.3rem;
+    text-decoration: none;
+    border-radius: 50%;
+    border-style: solid;
+    background: #567189;
+    color: #FFEEC9;
+    border-color: #FFEEC9;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.fa-arrow-left:hover{
+    background: #FFEEC9;
+    color: #567189;
+    transform: scale(1.1);
+}
+.inputFigures{
+    margin: 5rem 5rem 2rem 5rem;
+}
+.image-preview-container {
+    width: 350px;
+    min-height: 200px;
+    margin: 0 auto;
+    border: 2px solid #FFEEC9;
+    border-radius: 20px;
+}
+.image-preview-container img {
+    width: 100%;
+    display: none;
+}
+.image-preview-container input {
+    display: none;
+}
+.image-preview-container label {
+    display: block;
+    width: 45%;
+    height: 45px;
+    margin-inline: 25%;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+}
+.noteInputs h1{
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #fceac1;
+}
+.reminderInput{
+    width: 45vw;
+    height: auto;
+    background: #CFB997;
+    border-radius: 10px;
+    line-height: 1.5rem;
+}
+.reminderInput span{
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+    color: #567189;
+    letter-spacing: 0.2rem;
+}
+.reminderInput p{
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #3B444D;
+}
+/******REFERENCE PAGE*****/
+.refPage{
+    background: #3B444D;
+    min-height: 100vh;
+}
+.refPage h1 a{
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.5rem;
+    color: #FFEEC9;
+}
+.refPage .arrow .fa{
+    letter-spacing: 1rem;
+    padding: 0.8rem;
+    font-size: 1.3rem;
+    height: 3.3rem;
+    width: 3.3rem;
+    text-decoration: none;
+    border-radius: 50%;
+    border-style: solid;
+    background: #3B444D;
+    color: #FFEEC9;
+    border-color: #FFEEC9;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.refPage .fa-arrow-left:hover{
+    background: #FFEEC9;
+    color: #567189;
+    transform: scale(1.1);
+}
+.refFigures{
+    margin: 6rem 5rem 2rem 5rem;
+}
+.refSign{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.uploadedSigns{
+    width: 270px;
+    height: auto;
+    border: 2px solid #CFB997;
+    border-radius: 15px;
+}
+.uploadedSigns img{
+    width: 240px;
+    height: 180px;
+}
+.refSign p{
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #fceac1;
+    text-transform: uppercase;
+}
+.userInputs{
+    width: auto;
+    height: auto;
+    border: 2px solid #CFB997;
+    border-radius: 15px;
+}
+.inputUser label{
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 0.2px;
+    color: #fceac1;
+}
+.button{
+    background-color: #FFAC3C;
+    color: #010101;
+    box-shadow: 1px 3px 7px #FFEEC9;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Teko', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.2rem;
+}
+.upload_but{
+    width: 520px;
+    height: 40px;
+}
+.button:hover{
+    background: #567189;
+    color: #FFEEC9;
+}
+/*****RESULT PAGE****/
+.resultPage{
+    background: #CFB997;
+    height: auto;
+    padding: 5rem;
+}
+.resultPage h1 a{
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.5rem;
+    color: #3B444D;
+}
+.resultPage .arrow .fa{
+    letter-spacing: 1rem;
+    font-size: 1.3rem;
+    height: 3.3rem;
+    width: 3.3rem;
+    border-radius: 50%;
+    border-style: solid;
+    background: #CFB997;
+    color: #567189;
+    border-color: #567189;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.resultPage .fa-arrow-left:hover{
+    background: #567189;
+    color: #CFB997;
+}
+.resultFigures{
+    margin: 2rem 5rem;
+}
+.pointedSign{
+    width: 280px;
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #567189;
+    border-radius: 15px;
+}
+.pointedSign img{
+    width: 240px;
+    height: 180px;
+}
+.querySign p{
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #567189;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+.resultSign p{
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #567189;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+.recogRes h1{
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Teko', sans-serif;
+    color: #567189;
+    text-transform: uppercase;
+}
+.report_but{
+    height: 40px;
+    width: 300px;
+    background: #3B444D;
+    border-width: 25px;
+    box-shadow: 1px 3px 5px #567189;
+    border-radius: 15px;
+    color: #FFEEC9;
+    font-weight: 700;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 0.2rem;
+}
+.report_but:hover{
+    background: #FFEEC9;
+    box-shadow: 1px 3px 5px #567189;
+    color: #3B444D;
+}
+.resultValues{
+    width: 50vw;
+    height: 10vh;
+    border: 2px solid #567189;
+    border-radius: 15px;
+    background: #FFEEC9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+}
+.resultValues p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    color: #3B444D;
+    text-decoration: none;
+}
+.resultBut a{
+    width: 150px;
+    height: 40px;
+    margin: 1rem;
+    background: #567189;
+    border-width: 25px;
+    border: 2px solid #FFEEC9;
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #FFEEC9;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Teko', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.2rem;
+}
+.replayBut:hover{
+    background: green;
+    border-color: #567189;
+    box-shadow: 5px #FFEEC9;
+    text-transform: uppercase;
+    color: #FFEEC9;
+}
+.endBut:hover{
+    background: red;
+    border-color: #567189;
+    box-shadow: 5px #FFEEC9;
+    text-transform: uppercase;
+    color: #FFEEC9;
+}
+.img-modal img{
+    max-width: 1100px;
+    border: 2px solid #3B444D;
+    padding: 0.5rem;
+}
+

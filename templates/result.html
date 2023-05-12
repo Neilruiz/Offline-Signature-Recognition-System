@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Result | Signature Recognition</title>
+    
+        <link rel="shortcut icon" type="image/jpg" href="Image/logo.png">
+    
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&family=Roboto:ital,wght@1,100&family=Teko&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <section class="resultPage d-flex flex-column align-items-center justify-content-center">
+            <div class="arrow position-absolute top-0 start-0 m-5 p-1">
+                <a href="/reference" class="fa fa-arrow-left text-decoration-none"></a>
+            </div>
+    
+            <h1 class="text-center px-5 pt-5 pb-2"><a class="text-decoration-none" href="/home">OFFLINE SIGNATURE RECOGNITION SYSTEM</a></h1>
+    
+            <div class="resultFigures d-flex flex-column align-items-center justify-content-center">
+                <div class="row">
+                    <div class="querySign d-flex flex-column align-items-center justify-content-center col">
+                        <div class="pointedSign">
+                            <img src="{{ url_for('static', filename='/test/' + test_signature_path) }}" alt="Query signature">
+                        </div>
+                        <p>Query</p>
+                    </div>
+    
+                    <div class="resultSign d-flex flex-column align-items-center justify-content-center col">
+                        <div class="pointedSign">
+                            <img src="{{ url_for('static', filename='/trains/' + result_signature_path.split('/')[-1]) }}" alt="Result signature">
+                        </div>
+                        <p>Result</p>
+                    </div>
+                </div>
+    
+                <div class="recogRes">
+                    <div class="d-flex justify-content-center align-items-center pb-3">
+    
+                        <!-- Button trigger modal -->
+                        <a class="report_but d-flex justify-content-center align-items-center text-uppercase text-decoration-none mb-3" data-bs-toggle="modal" data-bs-target="#resultModal">
+                            Result Report
+                        </a>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="resultModalLabel">Accuracy Result</h5>
+    
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+    
+                                <div class="modal-body d-flex flex-column justify-content-center align-items-center p-4">
+                                    <span>The Signature is: {{ signature_status }}</span>
+                                    <br>
+                                    <span>Number of keypoints in the train signatures:</span>
+                                    <ul>
+                                    {% for train_keypoints_num in train_keypoints %}
+                                        <li>{{ train_keypoints_num }}</li>
+                                    {% endfor %}
+                                    </ul>
+                                    <br>
+                                    <span>Number of keypoints in the test signatures:</span>
+                                    <ul>
+                                    {% for test_keypoints_num in test_keypoints %}
+                                        <li>{{ test_keypoints_num }}</li>
+                                    {% endfor %}
+                                    </ul>
+                                    <div class="img-modal">
+                                        {% for i in range(1, 5 + 1) %}
+                                            <img src="{{ url_for('static', filename='/keypoints/test_keypoints' ~ i ~ '.png') }}" alt="Query signature {{ i }}">
+                                            <img src="{{ url_for('static', filename='/keypoints/train_keypoints' ~ i ~ '.png') }}" alt="Result signature {{ i }}">
+                                        {% endfor %}
+                                    </div>
+                                    
+                                    
+                                </div>                                
+    
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <h1 class="pb-3">Similarity Using Sift</h1>
+                       <!---<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        
+                        TO SHOW THE RESULTS OF RECOGNITION--->
+    
+                        <!--THE NEXT LINE OF CODE IS JUST PLACEHOLDER-->
+    
+                    <div class="resultValues">
+                        <p>{{ similarity }}</p>
+                    </div>
+    
+                    <h1 class="pt-3">The Signature is....</h1>
+                       <!---<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        
+                        TO SHOW THE RESULTS OF RECOGNITION--->
+    
+                        <!--THE NEXT LINE OF CODE IS JUST PLACEHOLDER-->
+    
+                    <div class="resultValues">
+                        <p>{{ signature_status }}</p>
+                    </div>
+                    <br>
+    
+                    <div class="resultBut d-flex justify-content-center align-items-center mt-3 row">
+                        <a class="replayBut col-6" href="/reference">VERIFY AGAIN</a>
+                        <a class="endBut col-6" href="/home">END</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    </body>
+</html>
+

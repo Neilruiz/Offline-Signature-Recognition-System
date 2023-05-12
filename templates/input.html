@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Recognition</title>
+    
+    <link rel="shortcut icon" type="image/jpg" href="Image/logo.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&family=Roboto:ital,wght@1,100&family=Teko&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+</head>
+<body>
+    <section class="inputPage d-flex flex-column align-items-center p-5">
+        <div class="arrow position-absolute top-0 start-0 m-5">
+            <a href="/index.html" class="fa fa-arrow-left"></a>
+        </div>
+
+        <h1 class="text-center px-5 pt-5"><a class="text-decoration-none" href="/index.html">OFFLINE RECOGNITION SYSTEM</a></h1>
+
+        <div class="inputFigures d-flex align-items-center justify-content-center flex-column flex-md-row">
+            <div class="noteInputs d-flex align-items-center justify-content-center flex-column m-4 order-2 order-md-1">
+                <h1 class="text-uppercase text-center px-5 mt-5 mt-md-2">Upload the image of the signature you want to recognize</h1>
+
+                <div class="reminderInput d-flex align-items-center justify-content-center flex-column text-center p-4 m-4">
+                    <span class="py-2 px-auto my-2 mx-auto">REMINDER</span>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae facere perspiciatis incidunt tempore eveniet, sed quia non, excepturi minus consectetur culpa sequi eaque voluptatum quas voluptate nemo voluptas velit atque!</p>
+                </div>
+                
+                <a class="upload_but mt-4" href="/reference.html">start</a>
+            </div>
+
+            <div class="image-preview-container mx-5 p-3 order-1 order-md-2">
+                <div class="preview">
+                    <img id="preview-selected-image"/>
+                </div>
+                <label for="file-upload" class="text-uppercase text-decoration-underline mt-3">Upload Image</label>
+                <input type="file" id="file-upload" accept="image/*" onchange="previewImage(event);" />
+            </div>
+        </div>
+    </section>
+    
+    <script src="app.js"></script>
+</body>
+</html>
